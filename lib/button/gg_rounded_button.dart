@@ -8,6 +8,7 @@ class GGRoundedButton extends StatelessWidget {
     this.child,
     this.padding,
     this.borderColoredOnly = false,
+    this.borderWidth = 1.0,
     this.borderRadius = 12,
   });
 
@@ -17,6 +18,7 @@ class GGRoundedButton extends StatelessWidget {
   final Widget child;
   final EdgeInsets padding;
   final bool borderColoredOnly;
+  final double borderWidth;
   final double borderRadius;
 
   @override
@@ -28,6 +30,7 @@ class GGRoundedButton extends StatelessWidget {
       color: _getColor(context),
       shape: Border.all(
         color: borderColor ?? theme.primaryColor,
+        width: borderWidth
       ),
       padding: padding,
       child: child,
