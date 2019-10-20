@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gg_flutter_components/gg_icon_container.dart';
-import 'package:gg_flutter_components/gg_rounded_button.dart';
+import 'package:gg_flutter_components/button/gg_rounded_button.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,7 +48,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child:
+            child: GGRoundedButton(
+              borderColoredOnly: true,
+              onPressed: () {},
+              borderColor: Colors.green,
+              child: Text('aaaaaaaaa'),
+            ),
           ),
         ],
       ),
