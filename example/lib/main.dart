@@ -48,10 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: GGRoundedButton(
-              onPressed: () {},
-              child: Text('aaaaaaaaa'),
-            ),
+            child:
           ),
         ],
       ),
