@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 
 class GGRandomCircleAvatar extends StatelessWidget {
   GGRandomCircleAvatar(
-      {this.radius, this.backgroundColor = Colors.white, this.errorImage = const Icon(Icons.error), this.placeholder = const CircularProgressIndicator()})
+      {@required this.radius,
+      this.backgroundColor = Colors.white,
+      this.errorImage = const Icon(Icons.error),
+      this.placeholder = const CircularProgressIndicator()})
       : assert(radius != null && radius > 0);
 
   final double radius;
