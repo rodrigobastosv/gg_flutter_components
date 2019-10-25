@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
 
   avataaar_image: ^1.0.6
+  datetime_picker_formfield: ^0.4.3
+  intl: ^0.15.8
 
 dev_dependencies:
   flutter_test:
