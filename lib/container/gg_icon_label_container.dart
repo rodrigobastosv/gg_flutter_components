@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GGIconContainer extends StatelessWidget {
-  const GGIconContainer({
+class GGIconLabelContainer extends StatelessWidget {
+  const GGIconLabelContainer({
     this.width,
     this.height,
     this.borderRadius = 20,

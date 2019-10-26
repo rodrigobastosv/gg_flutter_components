@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gg_flutter_components/gg_icon_container.dart';
+import 'package:gg_flutter_components/container/gg_icon_label_container.dart';
 import 'package:gg_flutter_components/button/gg_rounded_button.dart';
 
 void main() => runApp(MyApp());
@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: GGIconContainer(
+            child: GGIconLabelContainer(
               width: 200,
               height: 200,
               icon: Icon(Icons.info, size: 80,),
