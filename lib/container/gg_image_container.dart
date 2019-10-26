@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-class ImageContainer extends StatelessWidget {
-  const ImageContainer({this.image, this.radius = 60});
+class GGImageContainer extends StatelessWidget {
+  const GGImageContainer({this.image, this.radius = 60});
 
   final File image;
   final double radius;

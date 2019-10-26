@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class IconContainer extends StatelessWidget {
-  IconContainer({this.icon, this.size = 60});
+class GGIconContainer extends StatelessWidget {
+  GGIconContainer({this.icon, this.size = 60});
 
   final IconData icon;
   final double size;
