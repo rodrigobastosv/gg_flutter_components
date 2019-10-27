@@ -19,19 +19,19 @@ class GGRandomCircleAvatar extends StatefulWidget {
   final Widget errorImage;
   final Type type;
   final Widget placeholder;
+  final AvataaarsApi api = AvataaarsApi();
+  final _GGRandomCircleAvatarState state = _GGRandomCircleAvatarState();
+
+  String getUrl() {
+    return api.getUrl(state.avatar, radius);
+  }
 
   @override
-  _GGRandomCircleAvatarState createState() => _GGRandomCircleAvatarState();
+  _GGRandomCircleAvatarState createState() => state;
 }
 
 class _GGRandomCircleAvatarState extends State<GGRandomCircleAvatar> {
   Avataaar avatar;
-
-  final AvataaarsApi api = AvataaarsApi();
-
-  String getUrl() {
-    return api.getUrl(avatar, widget.radius);
-  }
 
   Top _getTop() {
     if (widget.type == null) {
@@ -49,6 +49,7 @@ class _GGRandomCircleAvatarState extends State<GGRandomCircleAvatar> {
   @override
   void initState() {
     super.initState();
+
     avatar = Avataaar(
         top: _getTop(),
         clothes: Clothes.random,
