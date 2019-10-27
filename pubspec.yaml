@@ -15,6 +15,7 @@ dependencies:
   datetime_picker_formfield: ^0.4.3
   intl: ^0.15.8
   ndialog: ^2.0.2
+  email_validator: ^1.0.0
 
 dev_dependencies:
   flutter_test:
