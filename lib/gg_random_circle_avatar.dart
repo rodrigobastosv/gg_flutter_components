@@ -6,12 +6,14 @@ enum Type { male, female }
 class GGRandomCircleAvatar extends StatefulWidget {
   GGRandomCircleAvatar(
       {@required this.radius,
+      this.key,
       this.backgroundColor = Colors.white,
       this.errorImage = const Icon(Icons.error),
       this.type,
       this.placeholder = const CircularProgressIndicator()})
       : assert(radius != null && radius > 0);
 
+  final Key key;
   final double radius;
   final Color backgroundColor;
   final Widget errorImage;
@@ -60,6 +62,7 @@ class _GGRandomCircleAvatarState extends State<GGRandomCircleAvatar> {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
+      key: widget.key,
       radius: widget.radius,
       backgroundColor: widget.backgroundColor,
       child: AvataaarImage(
