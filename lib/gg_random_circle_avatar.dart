@@ -8,14 +8,14 @@ class GGRandomCircleAvatar extends StatefulWidget {
       {@required this.radius,
       this.backgroundColor = Colors.white,
       this.errorImage = const Icon(Icons.error),
-      this.gender,
+      this.type,
       this.placeholder = const CircularProgressIndicator()})
       : assert(radius != null && radius > 0);
 
   final double radius;
   final Color backgroundColor;
   final Widget errorImage;
-  final Type gender;
+  final Type type;
   final Widget placeholder;
 
   @override
@@ -32,9 +32,9 @@ class _GGRandomCircleAvatarState extends State<GGRandomCircleAvatar> {
   }
 
   Top _getTop() {
-    if (widget.gender == null) {
+    if (widget.type == null) {
       return Top.random;
-    } else if (widget.gender == Type.male) {
+    } else if (widget.type == Type.male) {
       return Top.shortHairShortFlat(
         facialHair: FacialHair.blank,
       );
