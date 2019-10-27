@@ -1,7 +1,7 @@
 import 'package:avataaar_image/avataaar_image.dart';
 import 'package:flutter/material.dart';
 
-enum Gender { male, female }
+enum Type { male, female }
 
 class GGRandomCircleAvatar extends StatefulWidget {
   GGRandomCircleAvatar(
@@ -15,7 +15,7 @@ class GGRandomCircleAvatar extends StatefulWidget {
   final double radius;
   final Color backgroundColor;
   final Widget errorImage;
-  final Gender gender;
+  final Type gender;
   final Widget placeholder;
 
   @override
@@ -34,7 +34,7 @@ class _GGRandomCircleAvatarState extends State<GGRandomCircleAvatar> {
   Top _getTop() {
     if (widget.gender == null) {
       return Top.random;
-    } else if (widget.gender == Gender.male) {
+    } else if (widget.gender == Type.male) {
       return Top.shortHairShortFlat(
         facialHair: FacialHair.blank,
       );
