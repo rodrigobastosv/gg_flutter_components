@@ -9,6 +9,8 @@ class GGFormDatePicker extends StatelessWidget {
       this.initialDate,
       this.labelText,
       this.onSaved,
+      this.focusNode,
+      this.onEditingComplete,
       this.validator,
   }) : assert(format != null);
 
@@ -16,6 +18,8 @@ class GGFormDatePicker extends StatelessWidget {
   final InputDecoration decoration;
   final DateTime initialDate;
   final String labelText;
+  final FocusNode focusNode;
+  final VoidCallback onEditingComplete;
   final TextEditingController controller = TextEditingController();
   final FormFieldSetter<DateTime> onSaved;
   final FormFieldValidator<DateTime> validator;
@@ -30,6 +34,8 @@ class GGFormDatePicker extends StatelessWidget {
         border: OutlineInputBorder(),
       ),
       controller: controller,
+      focusNode: focusNode,
+      onEditingComplete: onEditingComplete,
       onSaved: onSaved,
       validator: validator,
       format: format,
