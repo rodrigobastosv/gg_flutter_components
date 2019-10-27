@@ -5,6 +5,7 @@ class GGOutlinedTextFormField extends StatelessWidget {
       {@required this.labelText,
       this.initialValue,
       this.onSaved,
+      this.autofocus,
       this.validator,
       this.keyboardType,
       this.textInputAction,
@@ -14,6 +15,7 @@ class GGOutlinedTextFormField extends StatelessWidget {
       : assert(labelText != null && labelText != '');
 
   final String labelText;
+  final bool autofocus;
   final String initialValue;
   final FormFieldSetter<String> onSaved;
   final FormFieldValidator<String> validator;
@@ -27,6 +29,7 @@ class GGOutlinedTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: onSaved,
+      autofocus: autofocus,
       validator: validator,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
