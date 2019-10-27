@@ -11,13 +11,13 @@ mixin GGValidators {
       return emptyMessage;
     }
 
-    if (!EmailValidator.validate(value)) {
-      return errorText;
-    }
-    return null;
+    return !EmailValidator.validate(value) ? errorText : null;
   }
 
   String emailValidator(String value, {String errorText = 'E-mail Inválido'}) {
+    if (value == null || value == '') {
+      return null;
+    }
     return !EmailValidator.validate(value) ? errorText : null;
   }
 }
