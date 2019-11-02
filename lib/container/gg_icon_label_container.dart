@@ -9,7 +9,7 @@ class GGIconLabelContainer extends StatelessWidget {
     this.padding,
     this.color,
     this.backgroundColor = Colors.transparent,
-    this.withShadow,
+    this.withShadow = false,
     this.icon,
     this.text,
     this.onTap,
@@ -32,35 +32,31 @@ class GGIconLabelContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
 
-    return InkWell(
-      onTap: onTap,
-      splashColor: color ?? theme.primaryColor,
-      child: Container(
-        padding: padding,
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          border: Border.all(
-            color: color ?? theme.primaryColor,
-            width: borderWidth,
-          ),
-          borderRadius: BorderRadius.circular(borderRadius),
-          boxShadow: withShadow
-              ? [
-                  BoxShadow(
-                    offset: const Offset(0, 1),
-                    color: Colors.grey,
-                  ),
-                ]
-              : null,
+    return Material(
+      elevation: withShadow ? 3 : 0,
+      color: backgroundColor,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: color ?? theme.primaryColor,
+          width: borderWidth,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            icon,
-            text,
-          ],
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+      child: InkWell(
+        onTap: onTap,
+        splashColor: color ?? theme.primaryColor,
+        borderRadius: BorderRadius.circular(borderRadius),
+        child: Container(
+          padding: padding,
+          width: width,
+          height: height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              icon,
+              text,
+            ],
+          ),
         ),
       ),
     );
