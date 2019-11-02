@@ -8,6 +8,8 @@ class GGIconLabelContainer extends StatelessWidget {
     this.borderWidth = 2,
     this.padding,
     this.color,
+    this.backgroundColor = Colors.transparent,
+    this.withShadow,
     this.icon,
     this.text,
     this.onTap,
@@ -20,6 +22,8 @@ class GGIconLabelContainer extends StatelessWidget {
   final double borderWidth;
   final EdgeInsets padding;
   final Color color;
+  final Color backgroundColor;
+  final bool withShadow;
   final Icon icon;
   final Text text;
   final Function onTap;
@@ -36,8 +40,20 @@ class GGIconLabelContainer extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
+          color: backgroundColor,
+          border: Border.all(
+            color: color ?? theme.primaryColor,
+            width: borderWidth,
+          ),
           borderRadius: BorderRadius.circular(borderRadius),
-          border: Border.all(color: color ?? theme.primaryColor, width: borderWidth),
+          boxShadow: withShadow
+              ? [
+                  BoxShadow(
+                    offset: const Offset(0, 1),
+                    color: Colors.grey,
+                  ),
+                ]
+              : null,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
