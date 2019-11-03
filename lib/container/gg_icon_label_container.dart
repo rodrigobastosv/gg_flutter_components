@@ -25,7 +25,7 @@ class GGIconLabelContainer extends StatelessWidget {
   final Color backgroundColor;
   final bool withShadow;
   final Icon icon;
-  final Text text;
+  final Widget text;
   final Function onTap;
 
   @override
@@ -52,8 +52,10 @@ class GGIconLabelContainer extends StatelessWidget {
           height: height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               icon,
+              const SizedBox(height: 4),
               text,
             ],
           ),
