@@ -16,6 +16,7 @@ dependencies:
   intl: ^0.15.8
   ndialog: ^2.0.2
   email_validator: ^1.0.0
+  flushbar: ^1.9.1
 
 dev_dependencies:
   flutter_test:
