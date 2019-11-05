@@ -17,6 +17,7 @@ dependencies:
   ndialog: ^2.0.2
   email_validator: ^1.0.0
   flushbar: ^1.9.1
+  flutter_spinkit: ^4.0.0
 
 dev_dependencies:
   flutter_test:
