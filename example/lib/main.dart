@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 200,
               height: 200,
               icon: Icon(Icons.info, size: 80,),
-              text: Text('qqqqqqq'),
+              text: Text(''),
               onTap: () => print('aaa'),
             ),
           ),
