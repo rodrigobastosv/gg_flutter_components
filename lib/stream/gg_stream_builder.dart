@@ -23,7 +23,6 @@ class GGStreamBuilder<T> extends StatelessWidget {
     return StreamBuilder<T>(
       stream: stream,
       builder: (_, snapshot) {
-        print(snapshot);
         switch (snapshot.connectionState) {
           case ConnectionState.done:
           case ConnectionState.active:
