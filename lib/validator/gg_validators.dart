@@ -5,6 +5,10 @@ mixin GGValidators {
     return value.isEmpty ? errorText : null;
   }
 
+  String emptyDateTimeValidator(DateTime value, {String errorText = 'Campo Obrigatório'}) {
+    return value == null ? errorText : null;
+  }
+
   String requiredEmailValidator(String value, {String errorText = 'E-mail Inválido'}) {
     final emptyMessage = emptyValidator(value);
     if (emptyMessage != null) {
