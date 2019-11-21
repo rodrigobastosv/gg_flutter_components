@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class GGSnackbar {
   GGSnackbar.info({
     this.title,
+    this.duration = const Duration(seconds: 1),
     @required this.message,
     @required this.context,
   })  : assert(message != null),
@@ -17,6 +18,7 @@ class GGSnackbar {
 
   GGSnackbar.success({
     this.title,
+    this.duration = const Duration(seconds: 1),
     @required this.message,
     @required this.context,
   })  : assert(message != null),
@@ -30,6 +32,7 @@ class GGSnackbar {
 
   GGSnackbar.warning({
     this.title,
+    this.duration = const Duration(seconds: 1),
     @required this.message,
     @required this.context,
   })  : assert(message != null),
@@ -43,6 +46,7 @@ class GGSnackbar {
 
   GGSnackbar.error({
     this.title,
+    this.duration = const Duration(seconds: 1),
     @required this.message,
     @required this.context,
   })  : assert(message != null),
@@ -54,6 +58,7 @@ class GGSnackbar {
     _buildSnackbar();
   }
 
+  final Duration duration;
   final String title;
   final String message;
   final BuildContext context;
@@ -93,7 +98,7 @@ class GGSnackbar {
         ),
       ),
       backgroundColor: backgroundColor,
-      duration: const Duration(seconds: 10),
+      duration: duration,
       flushbarStyle: FlushbarStyle.FLOATING,
       dismissDirection: FlushbarDismissDirection.HORIZONTAL,
       margin: const EdgeInsets.all(8.0),
