@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 class GGSnackbar {
   GGSnackbar.info({
     this.title,
-    this.duration = const Duration(seconds: 1),
+    this.mainButtonText,
+    this.mainButtonOnPressed,
+    this.duration = const Duration(seconds: 5),
     @required this.message,
     @required this.context,
   })  : assert(message != null),
@@ -18,7 +20,9 @@ class GGSnackbar {
 
   GGSnackbar.success({
     this.title,
-    this.duration = const Duration(seconds: 1),
+    this.mainButtonText,
+    this.mainButtonOnPressed,
+    this.duration = const Duration(seconds: 5),
     @required this.message,
     @required this.context,
   })  : assert(message != null),
@@ -32,7 +36,9 @@ class GGSnackbar {
 
   GGSnackbar.warning({
     this.title,
-    this.duration = const Duration(seconds: 1),
+    this.mainButtonText,
+    this.mainButtonOnPressed,
+    this.duration = const Duration(seconds: 5),
     @required this.message,
     @required this.context,
   })  : assert(message != null),
@@ -46,7 +52,9 @@ class GGSnackbar {
 
   GGSnackbar.error({
     this.title,
-    this.duration = const Duration(seconds: 1),
+    this.mainButtonText,
+    this.mainButtonOnPressed,
+    this.duration = const Duration(seconds: 5),
     @required this.message,
     @required this.context,
   })  : assert(message != null),
@@ -61,6 +69,8 @@ class GGSnackbar {
   final Duration duration;
   final String title;
   final String message;
+  final String mainButtonText;
+  final Function mainButtonOnPressed;
   final BuildContext context;
 
   Color backgroundColor;
@@ -103,6 +113,17 @@ class GGSnackbar {
       dismissDirection: FlushbarDismissDirection.HORIZONTAL,
       margin: const EdgeInsets.all(8.0),
       borderRadius: 12.0,
+      mainButton: FlatButton(
+        padding: const EdgeInsets.symmetric(
+          vertical: 4,
+          horizontal: 0,
+        ),
+        child: Text(
+          mainButtonText,
+          textAlign: TextAlign.center,
+        ),
+        onPressed: mainButtonOnPressed,
+      ),
     ).show(context);
   }
 }
