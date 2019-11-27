@@ -10,6 +10,7 @@ class GGOutlinedTextFormField extends StatelessWidget {
       this.textInputAction,
       this.focusNode,
       this.onEditingComplete,
+      this.controller,
       this.minLines,
       this.maxLines})
       : assert(labelText != null && labelText != '');
@@ -24,11 +25,13 @@ class GGOutlinedTextFormField extends StatelessWidget {
   final VoidCallback onEditingComplete;
   final int minLines;
   final int maxLines;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: onSaved,
+      controller: controller,
       validator: validator,
       onEditingComplete: onEditingComplete,
       keyboardType: keyboardType,
