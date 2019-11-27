@@ -119,7 +119,7 @@ class GGSnackbar {
           horizontal: 0,
         ),
         child: Text(
-          mainButtonText,
+          mainButtonText ?? '',
           textAlign: TextAlign.center,
         ),
         onPressed: mainButtonOnPressed,
