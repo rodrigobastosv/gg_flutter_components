@@ -13,7 +13,7 @@ dependencies:
 
   avataaar_image: ^1.0.6
   datetime_picker_formfield: ^0.4.3
-  intl: ^0.15.8
+  intl: ^0.16.0
   ndialog: ^2.0.2
   email_validator: ^1.0.0
   flushbar: ^1.9.1
