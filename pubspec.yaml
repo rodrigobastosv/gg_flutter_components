@@ -17,11 +17,7 @@ dependencies:
   email_validator: ^1.0.0
   flushbar: ^1.9.1
   flutter_spinkit: ^4.0.0
-
-  datetime_picker_formfield:
-    git:
-      url: git://github.com/rodrigobastosv/datetime_picker_formfield.git
-      ref: master
+  datetime_picker_formfield: ^0.4.3
 
 dev_dependencies:
   flutter_test:
