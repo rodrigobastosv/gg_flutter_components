@@ -7,7 +7,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.0"
+    version: "2.3.0"
   avataaar_image:
     dependency: "direct main"
     description:
@@ -60,10 +60,12 @@ packages:
   datetime_picker_formfield:
     dependency: "direct main"
     description:
-      name: datetime_picker_formfield
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.3"
+      path: "."
+      ref: master
+      resolved-ref: "0e3c6e928d6ac5d0c52ab1cb147f170e334c7556"
+      url: "git://github.com/rodrigobastosv/datetime_picker_formfield.git"
+    source: git
+    version: "1.0.0-pre.5"
   email_validator:
     dependency: "direct main"
     description:
@@ -122,7 +124,7 @@ packages:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.8"
+    version: "0.16.0"
   matcher:
     dependency: transitive
     description:
@@ -164,7 +166,7 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.0"
+    version: "1.8.0+1"
   platform:
     dependency: transitive
     description:
@@ -178,7 +180,7 @@ packages:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.2+1"
+    version: "2.0.5"
   simple_animations:
     dependency: transitive
     description:

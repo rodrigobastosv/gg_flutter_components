@@ -5,19 +5,23 @@ author:
 homepage:
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.5.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   avataaar_image: ^1.0.6
-  intl: ^0.15.8
+  intl: ^0.16.0
   ndialog: ^2.0.2
   email_validator: ^1.0.0
   flushbar: ^1.9.1
   flutter_spinkit: ^4.0.0
-  datetime_picker_formfield: ^0.4.3
+
+  datetime_picker_formfield:
+    git:
+      url: git://github.com/rodrigobastosv/datetime_picker_formfield.git
+      ref: master
 
 dev_dependencies:
   flutter_test:
