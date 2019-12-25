@@ -4,12 +4,12 @@ import 'package:gg_flutter_components/form/gg_text_form_field.dart';
 class GGTextFormFieldShadowed extends StatelessWidget {
   const GGTextFormFieldShadowed({
     @required this.labelText,
-    this.shadowHeight = 59,
-    this.shadowBlurRadius = 8,
+    this.shadowHeight,
+    this.shadowBlurRadius,
     this.shadowColor,
     this.shadowOffset,
     this.enabled,
-    this.minLines,
+    this.minLines = 1,
     this.maxLines,
     this.keyboardType,
     this.textInputAction,
@@ -43,11 +43,13 @@ class GGTextFormFieldShadowed extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          height: shadowHeight,
+          height: shadowHeight != null
+              ? shadowHeight
+              : (minLines > 1) ? (((minLines - 1) * 19) + 59.0) : 59.0,
           decoration: BoxDecoration(
             boxShadow: <BoxShadow>[
               BoxShadow(
-                blurRadius: shadowBlurRadius,
+                blurRadius: shadowBlurRadius ?? 8,
                 color: shadowColor ?? Colors.grey[300],
                 offset: shadowOffset ?? Offset(0, 0.4),
               ),
