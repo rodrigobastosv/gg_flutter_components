@@ -4,6 +4,10 @@ import 'package:gg_flutter_components/form/gg_text_form_field.dart';
 class GGTextFormFieldShadowed extends StatelessWidget {
   const GGTextFormFieldShadowed({
     @required this.labelText,
+    this.shadowHeight = 59,
+    this.shadowBlurRadius = 8,
+    this.shadowColor,
+    this.shadowOffset,
     this.enabled,
     this.minLines,
     this.maxLines,
@@ -17,6 +21,10 @@ class GGTextFormFieldShadowed extends StatelessWidget {
     this.onSaved,
   }) : assert(labelText != null && labelText != '');
 
+  final double shadowHeight;
+  final double shadowBlurRadius;
+  final Color shadowColor;
+  final Offset shadowOffset;
   final String labelText;
   final bool enabled;
   final int minLines;
@@ -35,13 +43,13 @@ class GGTextFormFieldShadowed extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          height: 59,
+          height: shadowHeight,
           decoration: BoxDecoration(
             boxShadow: <BoxShadow>[
               BoxShadow(
-                blurRadius: 8,
-                color: Colors.grey[300],
-                offset: Offset(0, 0.4),
+                blurRadius: shadowBlurRadius,
+                color: shadowColor ?? Colors.grey[300],
+                offset: shadowOffset ?? Offset(0, 0.4),
               ),
             ],
           ),
