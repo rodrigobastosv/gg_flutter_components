@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class GGOutlinedTextFormField extends StatelessWidget {
   GGOutlinedTextFormField(
       {@required this.labelText,
+      this.hintText,
       this.initialValue,
       this.onSaved,
       this.validator,
@@ -17,6 +18,7 @@ class GGOutlinedTextFormField extends StatelessWidget {
       : assert(labelText != null && labelText != '');
 
   final String labelText;
+  final String hintText;
   final String initialValue;
   final FormFieldSetter<String> onSaved;
   final FormFieldValidator<String> validator;
@@ -42,6 +44,7 @@ class GGOutlinedTextFormField extends StatelessWidget {
       focusNode: focusNode,
       decoration: InputDecoration(
         labelText: labelText,
+        hintText: hintText ?? '',
         border: OutlineInputBorder(),
       ),
       initialValue: initialValue,
