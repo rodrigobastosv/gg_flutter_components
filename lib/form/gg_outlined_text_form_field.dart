@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class GGOutlinedTextFormField extends StatelessWidget {
   GGOutlinedTextFormField(
       {@required this.labelText,
+      this.width = 300,
       this.hintText,
       this.initialValue,
       this.onSaved,
@@ -18,6 +19,7 @@ class GGOutlinedTextFormField extends StatelessWidget {
       : assert(labelText != null && labelText != '');
 
   final String labelText;
+  final double width;
   final String hintText;
   final String initialValue;
   final FormFieldSetter<String> onSaved;
@@ -33,23 +35,26 @@ class GGOutlinedTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      onSaved: onSaved,
-      enabled: enabled,
-      controller: controller,
-      validator: validator,
-      onEditingComplete: onEditingComplete,
-      keyboardType: keyboardType,
-      textInputAction: textInputAction,
-      focusNode: focusNode,
-      decoration: InputDecoration(
-        labelText: labelText,
-        hintText: hintText ?? '',
-        border: OutlineInputBorder(),
+    return Container(
+      width: width,
+      child: TextFormField(
+        onSaved: onSaved,
+        enabled: enabled,
+        controller: controller,
+        validator: validator,
+        onEditingComplete: onEditingComplete,
+        keyboardType: keyboardType,
+        textInputAction: textInputAction,
+        focusNode: focusNode,
+        decoration: InputDecoration(
+          labelText: labelText,
+          hintText: hintText ?? '',
+          border: OutlineInputBorder(),
+        ),
+        initialValue: initialValue,
+        minLines: minLines,
+        maxLines: maxLines,
       ),
-      initialValue: initialValue,
-      minLines: minLines,
-      maxLines: maxLines,
     );
   }
 }
